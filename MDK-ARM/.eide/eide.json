@@ -2,7 +2,9 @@
   "name": "HERO_CHASIS_BOARD",
   "type": "ARM",
   "dependenceList": [],
-  "srcDirs": [],
+  "srcDirs": [
+    "../user_code"
+  ],
   "virtualFolder": {
     "name": "<virtual_root>",
     "files": [],
@@ -34,6 +36,9 @@
                     "path": "../Core/Src/gpio.c"
                   },
                   {
+                    "path": "../Core/Src/freertos.c"
+                  },
+                  {
                     "path": "../Core/Src/dma.c"
                   },
                   {
@@ -50,6 +55,9 @@
                   },
                   {
                     "path": "../Core/Src/stm32h7xx_hal_msp.c"
+                  },
+                  {
+                    "path": "../Core/Src/stm32h7xx_hal_timebase_tim.c"
                   }
                 ],
                 "folders": []
@@ -95,6 +103,12 @@
           {
             "name": "STM32H7xx_HAL_Driver",
             "files": [
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c"
+              },
               {
                 "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.c"
               },
@@ -162,12 +176,6 @@
                 "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c"
               },
               {
-                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c"
-              },
-              {
-                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c"
-              },
-              {
                 "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c"
               },
               {
@@ -208,8 +216,49 @@
               }
             ],
             "folders": []
+          },
+          {
+            "name": "FreeRTOS",
+            "files": [
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/croutine.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/list.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/queue.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/tasks.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/timers.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c"
+              }
+            ],
+            "folders": []
           }
         ]
+      },
+      {
+        "name": "::CMSIS",
+        "files": [],
+        "folders": []
       }
     ]
   },
@@ -330,7 +379,7 @@
                 "startAddr": "0x0",
                 "size": "0x0"
               },
-              "isChecked": false,
+              "isChecked": true,
               "isStartup": false
             }
           ]
@@ -365,6 +414,7 @@
       "custom_dep": {
         "name": "default",
         "incList": [
+          ".",
           "../Core/Inc",
           "../Drivers/STM32H7xx_HAL_Driver/Inc",
           "../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
@@ -374,8 +424,20 @@
           "../USB_DEVICE/Target",
           "../Middlewares/ST/STM32_USB_Device_Library/Core/Inc",
           "../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc",
+          "../Middlewares/Third_Party/FreeRTOS/Source/include",
+          "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
+          "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F",
           ".cmsis/include",
-          "RTE/_HERO_CHASIS_BOARD"
+          "RTE/_HERO_CHASIS_BOARD",
+          "../user_code/Algorithm",
+          "../user_code/Application",
+          "../user_code/bsp",
+          "../user_code/componet",
+          "../user_code/Device",
+          "../user_code/Moudle",
+          "../user_code/Protocol",
+          "../user_code/componet/include",
+          "../user_code/componet/support"
         ],
         "libList": [],
         "defineList": [
