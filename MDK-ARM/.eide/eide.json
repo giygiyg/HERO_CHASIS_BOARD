@@ -386,17 +386,12 @@
         },
         "options": "null"
       },
-      "uploader": "STLink",
+      "uploader": "OpenOCD",
       "uploadConfig": {
         "bin": "",
-        "proType": "SWD",
-        "resetMode": "default",
-        "runAfterProgram": true,
-        "speed": 4000,
-        "address": "0x8000000",
-        "elFile": "None",
-        "optionBytes": ".eide/hero_chasis_board.st.option.bytes.ini",
-        "otherCmds": ""
+        "target": "stm32h7x",
+        "interface": "cmsis-dap-v1",
+        "baseAddr": "0x08000000"
       },
       "uploadConfigMap": {
         "JLink": {
@@ -408,6 +403,17 @@
           },
           "proType": 1,
           "speed": 8000,
+          "otherCmds": ""
+        },
+        "STLink": {
+          "bin": "",
+          "proType": "SWD",
+          "resetMode": "default",
+          "runAfterProgram": true,
+          "speed": 4000,
+          "address": "0x8000000",
+          "elFile": "None",
+          "optionBytes": ".eide/hero_chasis_board.st.option.bytes.ini",
           "otherCmds": ""
         }
       },
@@ -442,7 +448,8 @@
         "defineList": [
           "USE_PWR_LDO_SUPPLY",
           "USE_HAL_DRIVER",
-          "STM32H723xx"
+          "STM32H723xx",
+          "ARM_MATH_CM7"
         ]
       },
       "builderOptions": {

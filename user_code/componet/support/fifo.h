@@ -18,7 +18,7 @@
 #define NDEBUG
 #define USE_DYNAMIC_MEMORY //!< Use system malloc/free function
 
-#include "stm32f4xx_hal.h"
+#include "stm32h7xx_hal.h"
 
 #define FIFO_ENTER_CRITICAL __disable_irq
 #define FIFO_EXIT_CRITICAL __enable_irq

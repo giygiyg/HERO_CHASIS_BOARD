@@ -1,7 +1,7 @@
 #ifndef __MACRO_MUTEX_H
 #define __MACRO_MUTEX_H
 
-#include "stm32f4xx_hal.h"
+#include "stm32h7xx_hal.h"
 
 #define USE_CRITICAL_LOCK
 

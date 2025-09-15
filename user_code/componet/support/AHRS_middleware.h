@@ -2,11 +2,11 @@
 /**
   ****************************(C) COPYRIGHT 2019 DJI****************************
   * @file       AHRS_MiddleWare.c/h
-  * @brief      ×ËÌ¬½âËãÖÐ¼ä²ã£¬Îª×ËÌ¬½âËãÌá¹©Ïà¹Øº¯Êý
+  * @brief      
   * @note       
   * @history
   *  Version    Date            Author          Modification
-  *  V1.0.0     Dec-26-2018     RM              1. Íê³É
+  *  V1.0.0     Dec-26-2018     RM              1. ï¿½ï¿½ï¿½
   *
   @verbatim
   ==============================================================================
@@ -19,7 +19,7 @@
 #ifndef AHRS_MIDDLEWARE_H
 #define AHRS_MIDDLEWARE_H
 
-//ÖØÐÂ¶ÔÓ¦µÄÊý¾ÝÀàÐÍ
+//ï¿½ï¿½ï¿½Â¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 typedef signed char int8_t;
 typedef signed short int int16_t;
 typedef signed int int32_t;
@@ -34,22 +34,22 @@ typedef unsigned char bool_t;
 typedef float fp32;
 typedef double fp64;
 
-//¶¨Òå NULL
+//ï¿½ï¿½ï¿½ï¿½ NULL
 #ifndef NULL
 #define NULL 0
 #endif
 
-//¶¨ÒåPI Öµ
+//ï¿½ï¿½ï¿½ï¿½PI Öµ
 #ifndef PI
 #define PI 3.14159265358979f
 #endif
 
-//¶¨Òå ½Ç¶È(¶È)×ª»»µ½ »¡¶ÈµÄ±ÈÀý
+//ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¶ï¿½(ï¿½ï¿½)×ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÈµÄ±ï¿½ï¿½ï¿½
 #ifndef ANGLE_TO_RAD
 #define ANGLE_TO_RAD 0.01745329251994329576923690768489f
 #endif
 
-//¶¨Òå »¡¶È ×ª»»µ½ ½Ç¶ÈµÄ±ÈÀý
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ×ªï¿½ï¿½ï¿½ï¿½ ï¿½Ç¶ÈµÄ±ï¿½ï¿½ï¿½
 #ifndef RAD_TO_ANGLE
 #define RAD_TO_ANGLE 57.295779513082320876798154814105f
 #endif

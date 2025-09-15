@@ -302,6 +302,8 @@
   #elif defined (ARM_MATH_CM0PLUS)
 #include "core_cm0plus.h"
   #define ARM_MATH_CM0_FAMILY
+#else
+  #error "Please define ARM_MATH_CMx macro in your project"
 
 #endif
 
