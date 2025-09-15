@@ -79,13 +79,7 @@ const motor_measure_t *Can_receive::get_chassis_motive_motor_measure_point(uint8
     return &chassis_motive_motor[i];
 }
 
-void Can_receive::receive_rc_board_com(uint8_t data[8])
-{
-    chassis_receive.ch_0 = (int16_t)(data[0] << 8 | data[1]);
-    chassis_receive.ch_2 = (int16_t)(data[2] << 8 | data[3]);
-    chassis_receive.ch_3 = (int16_t)(data[4] << 8 | data[5]);
-    chassis_receive.v = (uint16_t)(data[6] << 8 | data[7]);
-}
+
 
 void Can_receive::receive_gimbal_board_com(uint8_t data[8])
 {

@@ -49,18 +49,30 @@ typedef struct
 // 底盘接收数据结构体
 typedef struct
 {
-  // 遥控器数据
-  int16_t ch_0;
-  int16_t ch_2;
-  int16_t ch_3;
-  uint16_t v;
-
-  // 云台状态
-  uint8_t s1;
-  uint8_t gimbal_behaviour;
-  fp32 gimbal_yaw_angle;
-
+    // 云台状态
+    uint8_t s1;
+    uint8_t gimbal_behaviour;
+    fp32 gimbal_yaw_angle;
+    
+    // 云台控制模式
+    uint8_t gimbal_control_mode;      // 云台控制底盘的模式
+    uint8_t last_gimbal_control_mode; // 上一次的控制模式
+    
+    // 云台转向标志
+    uint8_t gimbal_turn_flag;         // 云台转向标志
+    uint8_t last_gimbal_turn_flag;    // 上一次的转向标志
+    
+    // 云台发送的速度控制指令
+    fp32 vx;                          // 纵向速度指令
+    fp32 vy;                          // 横向速度指令
+    fp32 wz;                          // 旋转速度指令
+    
+    // 云台发送的其他控制信息
+    uint8_t ui_update_flag;           // UI更新标志
+    uint8_t chassis_control_enable;   // 底盘控制使能标志
+    
 } chassis_receive_t;
+
 
 class Can_receive
 {
@@ -88,7 +100,6 @@ public:
   const motor_measure_t *get_chassis_motive_motor_measure_point(uint8_t i);
 
   // 板间通信函数
-  void receive_rc_board_com(uint8_t data[8]);
 
   void receive_gimbal_board_com(uint8_t data[8]);
 
