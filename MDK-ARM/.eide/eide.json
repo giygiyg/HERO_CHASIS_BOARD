@@ -270,7 +270,9 @@
   },
   "targets": {
     "HERO_CHASIS_BOARD": {
-      "excludeList": [],
+      "excludeList": [
+        "../user_code/componet/support/AHRS_middleware.c"
+      ],
       "toolchain": "AC5",
       "compileConfig": {
         "cpuType": "Cortex-M7",
