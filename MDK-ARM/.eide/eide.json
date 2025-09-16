@@ -270,9 +270,7 @@
   },
   "targets": {
     "HERO_CHASIS_BOARD": {
-      "excludeList": [
-        "../user_code/componet/support/AHRS_middleware.c"
-      ],
+      "excludeList": [],
       "toolchain": "AC5",
       "compileConfig": {
         "cpuType": "Cortex-M7",
@@ -437,12 +435,12 @@
           "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F",
           ".cmsis/include",
           "RTE/_HERO_CHASIS_BOARD",
-          "../user_code/Algorithm",
-          "../user_code/Application",
-          "../user_code/bsp",
           "../user_code/Device",
           "../user_code/Moudle",
           "../user_code/Protocol",
+          "../user_code/Algorithm",
+          "../user_code/Application",
+          "../user_code/bsp",
           "../user_code/componet/include",
           "../user_code/componet/support"
         ],
@@ -450,8 +448,7 @@
         "defineList": [
           "USE_PWR_LDO_SUPPLY",
           "USE_HAL_DRIVER",
-          "STM32H723xx",
-          "ARM_MATH_CM7"
+          "STM32H723xx"
         ]
       },
       "builderOptions": {

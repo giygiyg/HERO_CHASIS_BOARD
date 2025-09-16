@@ -61,8 +61,6 @@
  */
 
 #include "cmsis_version.h"
-#include "cmsis_compiler.h"               /* CMSIS compiler specific defines */
-                                           /* Core Instruction Access */
 
 /* CMSIS CM7 definitions */
 #define __CM7_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                  /*!< \deprecated [31:16] CMSIS HAL main version */
@@ -80,7 +78,8 @@
     #if defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)
       #define __FPU_USED       1U
     #else
-      #define __FPU_USED       1U
+      #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+      #define __FPU_USED       0U
     #endif
   #else
     #define __FPU_USED         0U

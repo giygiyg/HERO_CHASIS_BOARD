@@ -57,7 +57,7 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+void start_task(void const *argument);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -101,6 +101,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
+
+
   /* USER CODE END RTOS_EVENTS */
 
 }
@@ -127,6 +129,19 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+__weak void start_task(void const *argument)
+{
+  /* USER CODE BEGIN test_task */
+  System_Resource_Init();
+  /* Infinite loop */
+  for (;;)
+  {
+    Task_start();
+    /* Delete_Graph the default task. */
+    osThreadTerminate(startTaskHandle);
+  }
+  /* USER CODE END test_task */
+}
 
 /* USER CODE END Application */
 

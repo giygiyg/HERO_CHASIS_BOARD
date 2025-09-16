@@ -2,6 +2,8 @@
 #include "Communicate.h"
 #include "cmsis_os.h"
 #include "arm_math.h"
+#include "can_receive.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -11,7 +13,7 @@ extern "C"
 
 // 底盘模块对象
 Chassis chassis;
-
+Can_receive can_receive;
 // 临时变量，用于调试
 int debug_var = 0;
 fp32 debug_vx, debug_vy;
